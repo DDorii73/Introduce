@@ -62,8 +62,7 @@ body {
     top: 0;
     bottom: 0;
     width: 200px;
-    background-color: var(--light-navy);
-    border-right: 1px solid var(--lightest-navy);
+    background-color: transparent;
     padding: 50px 30px;
     z-index: 1000;
     display: flex;
@@ -82,12 +81,13 @@ body {
 }
 
 .logo a {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: var(--green);
     text-decoration: none;
     transition: var(--transition);
     display: inline-block;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 }
 
 .logo a:hover {
@@ -113,19 +113,19 @@ body {
 .nav-link {
     display: flex;
     align-items: center;
-    color: var(--light-slate);
+    color: var(--dark-slate);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: var(--transition);
-    padding: 8px 0;
+    padding: 10px 0;
     position: relative;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 }
 
 .nav-link span {
-    margin-right: 10px;
+    margin-right: 8px;
     color: var(--green);
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 
 .nav-link:hover,
@@ -141,6 +141,7 @@ body {
     height: 0;
     background-color: var(--green);
     transition: var(--transition);
+    border-radius: 2px;
 }
 
 .nav-link:hover::before,
@@ -171,8 +172,8 @@ body {
 
 .intro-content {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
     align-items: center;
 }
 
@@ -255,12 +256,14 @@ body {
     width: 300px;
     height: 300px;
     max-width: 100%;
+    margin-left: auto;
 }
 
 .profile-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 30%;
     border-radius: 50%;
     filter: grayscale(100%);
     transition: var(--transition);
@@ -280,27 +283,17 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 3px solid var(--green);
-    opacity: 0.5;
+    border: 2px solid var(--green);
+    opacity: 0.3;
     transition: var(--transition);
     z-index: 1;
-    animation: rotate 20s linear infinite;
 }
 
 .profile-image-container:hover .profile-image-border {
-    opacity: 1;
-    border-width: 4px;
-    box-shadow: 0 0 30px var(--green-tint);
+    opacity: 0.6;
+    box-shadow: 0 0 20px var(--green-tint);
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 @keyframes fadeInUp {
     from {
@@ -315,7 +308,7 @@ body {
 
 /* 섹션 스타일 */
 .section {
-    margin-bottom: 120px;
+    margin-bottom: 100px;
     opacity: 0;
     transform: translateY(30px);
     transition: var(--transition);
@@ -326,48 +319,109 @@ body {
     transform: translateY(0);
 }
 
-.section-number {
+.section-header {
     display: flex;
-    align-items: center;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--green);
-    margin-bottom: 10px;
-    margin-right: 20px;
+    align-items: baseline;
+    margin-bottom: 50px;
 }
 
-.section-number::after {
-    content: '';
-    display: block;
-    position: relative;
-    width: 300px;
-    height: 1px;
-    margin-left: 20px;
-    background-color: var(--lightest-navy);
+.section-number {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+    color: var(--green);
+    margin-right: 10px;
+    line-height: 1;
 }
 
 .section-title {
     font-size: clamp(26px, 5vw, 32px);
     font-weight: 600;
     color: var(--lightest-slate);
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
+    line-height: 1.1;
+    position: relative;
+    white-space: nowrap;
+}
+
+.section-title::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: var(--lightest-navy);
+    vertical-align: middle;
 }
 
 .section-content {
     color: var(--slate);
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 700px;
 }
 
 .section-content p {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .section-content p:last-child {
     margin-bottom: 0;
+}
+
+/* 주요 경력 및 학력 박스 */
+.achievement-box {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--light-navy);
+    border-radius: 4px;
+    border: 1px solid var(--lightest-navy);
+    transition: var(--transition);
+}
+
+.achievement-box:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+}
+
+.achievement-title {
+    font-size: 1.3rem;
+    color: var(--green);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.achievement-list {
+    list-style: none;
+    padding: 0;
+}
+
+.achievement-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-left: 0;
+    position: relative;
+}
+
+.achievement-list li:last-child {
+    margin-bottom: 0;
+}
+
+.achievement-year {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    color: var(--green);
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 60px;
+    margin-right: 20px;
+}
+
+.achievement-text {
+    color: var(--slate);
+    font-size: 1rem;
+    line-height: 1.6;
+    flex: 1;
 }
 
 /* 성격의 장단점 */
@@ -707,10 +761,15 @@ body {
     .profile-image-container {
         width: 250px;
         height: 250px;
+        margin: 0 auto;
     }
 
     .section {
         margin-bottom: 80px;
+    }
+
+    .section-title::after {
+        display: none;
     }
 
     .personality-grid {
