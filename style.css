@@ -6,21 +6,27 @@
 }
 
 :root {
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.1);
-    --pink: #f57dff;
-    --blue: #57cbff;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
-    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* 그레이 블루 배경색 */
+    --navy: #0f1419;
+    --light-navy: #1a2332;
+    --lightest-navy: #252f3f;
+    --navy-shadow: rgba(15, 20, 25, 0.8);
+    --dark-slate: #4a5568;
+    --slate: #718096;
+    --light-slate: #a0aec0;
+    --lightest-slate: #cbd5e0;
+    --white: #edf2f7;
+    /* 블루 악센트 컬러 */
+    --green: #4299e1;
+    --green-tint: rgba(66, 153, 225, 0.15);
+    --pink: #63b3ed;
+    --blue: #90cdf4;
+    --purple: #3182ce;
+    --yellow: #2b6cb0;
+    --font-sans: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 20px;
+    --border-radius-small: 12px;
 }
 
 html {
@@ -29,11 +35,28 @@ html {
 
 body {
     font-family: var(--font-sans);
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--slate);
-    background-color: var(--navy);
+    background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0f1419 100%);
+    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(66, 153, 225, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(144, 205, 244, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(49, 130, 206, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* 스크롤바 스타일 */
@@ -46,13 +69,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-slate);
+    background: linear-gradient(135deg, var(--green), var(--blue));
     border: 3px solid var(--navy);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--green);
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    box-shadow: 0 0 10px rgba(66, 153, 225, 0.5);
 }
 
 /* 좌측 사이드바 */
@@ -74,6 +98,76 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    justify-content: space-between;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    margin: 0;
+}
+
+.social-links a {
+    color: var(--slate);
+    font-size: 20px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+}
+
+/* 우측 이메일 링크 */
+.email-link-wrapper {
+    position: fixed;
+    right: 40px;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.email-link {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: var(--slate);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+}
+
+.email-link:hover {
+    color: var(--green);
+    transform: translateY(-5px);
+}
+
+.email-link-line {
+    width: 1px;
+    height: 90px;
+    background-color: var(--slate);
+    transition: var(--transition);
+}
+
+.email-link-wrapper:hover .email-link-line {
+    background-color: var(--green);
 }
 
 .logo {
@@ -81,18 +175,23 @@ body {
 }
 
 .logo a {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--green);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--green), var(--blue), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-decoration: none;
     transition: var(--transition);
     display: inline-block;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-family: var(--font-sans);
+    letter-spacing: 0.5px;
+    filter: drop-shadow(0 0 10px rgba(66, 153, 225, 0.3));
 }
 
 .logo a:hover {
-    color: var(--white);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(66, 153, 225, 0.5));
 }
 
 .sidebar-nav {
@@ -115,38 +214,47 @@ body {
     align-items: center;
     color: var(--dark-slate);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     transition: var(--transition);
-    padding: 10px 0;
+    padding: 12px 15px;
     position: relative;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-family: var(--font-sans);
+    border-radius: var(--border-radius-small);
+    margin-left: -15px;
 }
 
 .nav-link span {
-    margin-right: 8px;
-    color: var(--green);
-    font-size: 0.8rem;
+    margin-right: 10px;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--green);
+    color: var(--white);
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.15), rgba(144, 205, 244, 0.15));
+    transform: translateX(5px);
 }
 
 .nav-link::before {
     content: '';
     position: absolute;
-    left: -30px;
-    width: 2px;
+    left: 0;
+    width: 3px;
     height: 0;
-    background-color: var(--green);
+    background: linear-gradient(180deg, var(--green), var(--blue));
     transition: var(--transition);
-    border-radius: 2px;
+    border-radius: 0 10px 10px 0;
 }
 
 .nav-link:hover::before,
 .nav-link.active::before {
-    height: 100%;
+    height: 70%;
+    top: 15%;
 }
 
 /* 메인 콘텐츠 래퍼 */
@@ -182,11 +290,16 @@ body {
 }
 
 .intro-greeting {
-    color: var(--green);
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-    font-size: 1rem;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
     margin-bottom: 20px;
     animation: fadeInUp 0.6s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .intro-name {
@@ -199,7 +312,11 @@ body {
 }
 
 .intro-name .highlight {
-    color: var(--green);
+    background: linear-gradient(135deg, var(--green), var(--blue), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px rgba(66, 153, 225, 0.4));
 }
 
 .intro-title {
@@ -212,35 +329,64 @@ body {
 }
 
 .intro-description {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--slate);
     max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 40px;
+    line-height: 1.7;
+    margin-bottom: 50px;
     animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 .intro-description .highlight {
-    color: var(--green);
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
 }
 
 .cta-button {
     display: inline-block;
-    color: var(--green);
-    background-color: transparent;
-    border: 1px solid var(--green);
-    border-radius: 4px;
-    padding: 12px 28px;
-    font-size: 0.9rem;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
     animation: fadeInUp 0.6s ease 0.4s both;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(66, 153, 225, 0.3);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    transition: var(--transition);
+    z-index: -1;
 }
 
 .cta-button:hover {
-    background-color: var(--green-tint);
-    transform: translateY(-3px);
+    color: var(--white);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(66, 153, 225, 0.5);
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+.cta-button:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 /* 프로필 이미지 */
@@ -251,6 +397,149 @@ body {
     animation: fadeInUp 0.6s ease 0.5s both;
 }
 
+.intro-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    min-height: 400px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(144, 205, 244, 0.1));
+}
+
+.intro-image-wrapper-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    transition: var(--transition);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.intro-image-container:hover .intro-image {
+    transform: scale(1.12);
+}
+
+.intro-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.2), rgba(144, 205, 244, 0.2));
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    border-radius: 50%;
+}
+
+.intro-image-border {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 4px solid transparent;
+    background: linear-gradient(135deg, var(--green), var(--blue), var(--purple)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+    mask-composite: exclude;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: var(--transition);
+    pointer-events: none;
+    animation: borderRotate 3s linear infinite;
+}
+
+.intro-image-container:hover .intro-image-border {
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(66, 153, 225, 0.6);
+    transform: scale(1.05);
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.gallery-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(66, 153, 225, 0.2);
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--green), var(--blue)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+    mask-composite: exclude;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    display: block;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.gallery-item:hover .gallery-image-container {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(66, 153, 225, 0.4);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(10, 25, 47, 0.2) 100%);
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
 .profile-image-container {
     position: relative;
     width: 300px;
@@ -259,39 +548,100 @@ body {
     margin-left: auto;
 }
 
+.profile-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 50%;
+    overflow: visible;
+    z-index: 2;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15%;
+    box-sizing: border-box;
+}
+
+.profile-image-picture {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
 .profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    border-radius: 50%;
-    filter: grayscale(100%);
+    object-fit: contain;
+    object-position: center;
     transition: var(--transition);
-    position: relative;
-    z-index: 2;
+    display: block;
 }
 
 .profile-image:hover {
-    filter: grayscale(0%);
+    transform: scale(1.08) rotate(2deg);
+}
+
+.profile-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--green) 0%, var(--blue) 50%, var(--purple) 100%);
+    color: var(--white);
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    transition: var(--transition);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(0 0 20px rgba(66, 153, 225, 0.5));
+}
+
+.profile-image-container:hover .profile-image-placeholder {
+    background: linear-gradient(135deg, var(--green-tint) 0%, var(--lightest-navy) 100%);
     transform: scale(1.05);
 }
 
 .profile-image-border {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
     border-radius: 50%;
-    border: 2px solid var(--green);
-    opacity: 0.3;
+    border: 4px solid transparent;
+    background: linear-gradient(135deg, var(--green), var(--blue), var(--purple)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+    mask-composite: exclude;
+    opacity: 0.6;
     transition: var(--transition);
     z-index: 1;
+    animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .profile-image-container:hover .profile-image-border {
-    opacity: 0.6;
-    box-shadow: 0 0 20px var(--green-tint);
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(66, 153, 225, 0.6);
+    transform: scale(1.05);
 }
 
 
@@ -311,7 +661,7 @@ body {
     margin-bottom: 100px;
     opacity: 0;
     transform: translateY(30px);
-    transition: var(--transition);
+    transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .section.visible {
@@ -326,11 +676,14 @@ body {
 }
 
 .section-number {
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-    font-size: clamp(16px, 3vw, 20px);
-    font-weight: 400;
-    color: var(--green);
-    margin-right: 10px;
+    font-family: var(--font-sans);
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 15px;
     line-height: 1;
 }
 
@@ -369,26 +722,266 @@ body {
     margin-bottom: 0;
 }
 
+/* 섹션 이미지 스타일 */
+.content-with-image {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.section-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.section-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    min-height: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(66, 153, 225, 0.2);
+    transition: var(--transition);
+    border: 3px solid transparent;
+    background: linear-gradient(135deg, var(--green), var(--blue)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+    mask-composite: exclude;
+}
+
+.section-image-wrapper-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+.section-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.2), rgba(144, 205, 244, 0.2));
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    border-radius: var(--border-radius);
+}
+
+.section-image-container:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 50px rgba(66, 153, 225, 0.4);
+}
+
+.section-image {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 400px;
+    display: block;
+    transition: var(--transition);
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.section-image-container:hover .section-image {
+    transform: scale(1.08);
+}
+
+.section-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(10, 25, 47, 0.3) 100%);
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.section-image-container:hover .section-image-overlay {
+    opacity: 1;
+}
+
+/* 생활신조 섹션 이미지 */
+.philosophy-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.philosophy-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.philosophy-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.philosophy-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1;
+    min-height: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(144, 205, 244, 0.1));
+}
+
+.philosophy-image-wrapper-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.philosophy-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    border-radius: var(--border-radius-small);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.philosophy-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.2), rgba(144, 205, 244, 0.2));
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    border-radius: var(--border-radius-small);
+}
+
+.philosophy-image-container:hover .philosophy-image {
+    transform: scale(1.12);
+}
+
+.philosophy-image-border {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 4px solid transparent;
+    background: linear-gradient(135deg, var(--green), var(--blue), var(--purple)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+    mask-composite: exclude;
+    border-radius: var(--border-radius);
+    opacity: 0.6;
+    transition: var(--transition);
+    pointer-events: none;
+    animation: borderGlow 2s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 10px rgba(66, 153, 225, 0.3));
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 20px rgba(66, 153, 225, 0.6));
+    }
+}
+
+.philosophy-image-container:hover .philosophy-image-border {
+    opacity: 1;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+}
+
 /* 주요 경력 및 학력 박스 */
 .achievement-box {
     margin-top: 40px;
-    padding: 30px;
-    background-color: var(--light-navy);
-    border-radius: 4px;
-    border: 1px solid var(--lightest-navy);
+    padding: 35px;
+    background: linear-gradient(135deg, rgba(45, 45, 68, 0.8), rgba(61, 61, 92, 0.6));
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(66, 153, 225, 0.1), transparent);
     transition: var(--transition);
 }
 
 .achievement-box:hover {
     border-color: var(--green);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(66, 153, 225, 0.3);
+}
+
+.achievement-box:hover::before {
+    left: 100%;
 }
 
 .achievement-title {
-    font-size: 1.3rem;
-    color: var(--green);
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .achievement-list {
@@ -409,12 +1002,15 @@ body {
 }
 
 .achievement-year {
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-    color: var(--green);
-    font-size: 0.9rem;
-    font-weight: 600;
-    min-width: 60px;
-    margin-right: 20px;
+    font-family: var(--font-sans);
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1rem;
+    font-weight: 700;
+    min-width: 80px;
+    margin-right: 25px;
 }
 
 .achievement-text {
@@ -433,23 +1029,30 @@ body {
 }
 
 .personality-item {
-    background-color: var(--light-navy);
-    padding: 30px;
-    border-radius: 4px;
-    border: 1px solid var(--lightest-navy);
+    background: linear-gradient(135deg, rgba(45, 45, 68, 0.8), rgba(61, 61, 92, 0.6));
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: var(--transition);
 }
 
 .personality-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     border-color: var(--green);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(66, 153, 225, 0.3);
 }
 
 .personality-label {
-    font-size: 1.3rem;
-    color: var(--green);
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .personality-list {
@@ -471,9 +1074,13 @@ body {
 }
 
 .personality-icon {
-    color: var(--green);
-    margin-right: 10px;
-    font-size: 0.9rem;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 12px;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .personality-header strong {
@@ -490,26 +1097,60 @@ body {
 
 /* 생활신조 */
 .philosophy-box {
-    background-color: var(--light-navy);
+    background: linear-gradient(135deg, rgba(45, 45, 68, 0.9), rgba(61, 61, 92, 0.7));
+    backdrop-filter: blur(15px);
     padding: 50px;
-    border-radius: 4px;
-    border: 1px solid var(--lightest-navy);
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    background-clip: padding-box;
     text-align: center;
     transition: var(--transition);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(66, 153, 225, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
 }
 
 .philosophy-box:hover {
     border-color: var(--green);
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(66, 153, 225, 0.4);
 }
 
 .quote {
-    font-size: clamp(24px, 4vw, 32px);
-    font-weight: 600;
-    color: var(--green);
-    margin-bottom: 30px;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--green), var(--blue), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 35px;
     font-style: italic;
-    line-height: 1.4;
+    line-height: 1.5;
+    filter: drop-shadow(0 0 20px rgba(66, 153, 225, 0.4));
+    position: relative;
+    z-index: 1;
 }
 
 .philosophy-box p {
@@ -546,13 +1187,26 @@ body {
 .experience-item::before {
     content: '';
     position: absolute;
-    left: -6px;
+    left: -8px;
     top: 5px;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background-color: var(--green);
-    border: 2px solid var(--navy);
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    border: 3px solid var(--navy);
+    box-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 25px rgba(66, 153, 225, 0.8);
+    }
 }
 
 .experience-item:last-child {
@@ -599,12 +1253,23 @@ body {
 }
 
 .tech-tags li {
-    color: var(--green);
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-    font-size: 0.85rem;
-    padding: 5px 12px;
-    background-color: var(--green-tint);
-    border-radius: 3px;
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.2), rgba(144, 205, 244, 0.2));
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-small);
+    border: 1px solid rgba(66, 153, 225, 0.3);
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(66, 153, 225, 0.2);
+}
+
+.tech-tags li:hover {
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
 }
 
 /* 입사 후 포부 */
@@ -631,9 +1296,13 @@ body {
 }
 
 .future-icon {
-    color: var(--green);
-    margin-right: 10px;
-    font-size: 0.9rem;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 12px;
+    font-size: 1rem;
+    font-weight: 600;
     position: absolute;
     left: 0;
 }
@@ -679,14 +1348,14 @@ body {
 .scroll-top {
     position: fixed;
     bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--green-tint);
-    color: var(--green);
-    border: 1px solid var(--green);
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    color: var(--white);
+    border: none;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -695,6 +1364,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
 }
 
 .scroll-top.visible {
@@ -703,9 +1375,14 @@ body {
 }
 
 .scroll-top:hover {
-    background-color: var(--green);
-    color: var(--navy);
-    transform: translateY(-5px);
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: var(--white);
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 40px rgba(66, 153, 225, 0.6);
+}
+
+.scroll-top:active {
+    transform: translateY(-5px) scale(1.05);
 }
 
 /* 반응형 디자인 */
@@ -730,10 +1407,16 @@ body {
         left: -200px;
         width: 200px;
         transition: var(--transition);
+        background-color: rgba(10, 25, 47, 0.95);
+        backdrop-filter: blur(10px);
     }
 
     .sidebar.mobile-open {
         left: 0;
+    }
+
+    .email-link-wrapper {
+        display: none;
     }
 
     .main-wrapper {
@@ -758,10 +1441,27 @@ body {
         order: -1;
     }
 
-    .profile-image-container {
-        width: 250px;
-        height: 250px;
-        margin: 0 auto;
+    .intro-image-container {
+        max-width: 300px;
+        min-height: 300px;
+    }
+
+    .image-gallery {
+        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .section-image-gallery {
+        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .philosophy-image-gallery {
+        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
     }
 
     .section {
@@ -778,6 +1478,24 @@ body {
 
     .philosophy-box {
         padding: 30px 20px;
+    }
+
+    .content-with-image {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section-image-wrapper {
+        order: -1;
+    }
+
+    .philosophy-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .philosophy-image-wrapper {
+        order: -1;
     }
 
     .experience-header {
@@ -806,9 +1524,25 @@ body {
         gap: 30px;
     }
 
-    .profile-image-container {
-        width: 200px;
-        height: 200px;
+    .intro-image-container {
+        max-width: 250px;
+        min-height: 250px;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 300px;
+    }
+
+    .section-image-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .philosophy-image-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .section-number::after {

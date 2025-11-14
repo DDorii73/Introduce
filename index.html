@@ -3,30 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정은솔 - 자기소개서</title>
+    <title>김덕순 - 마약탐지견 자기소개서</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- 좌측 사이드바 네비게이션 -->
     <aside class="sidebar">
         <div class="sidebar-content">
             <div class="logo">
-                <a href="#intro">정은솔</a>
+                <a href="#intro">김덕순</a>
             </div>
             <nav class="sidebar-nav">
                 <ol class="nav-list">
+                    <li><a href="#intro" class="nav-link"><span>00.</span> 소개</a></li>
                     <li><a href="#motivation" class="nav-link"><span>01.</span> 지원 동기</a></li>
                     <li><a href="#personality" class="nav-link"><span>02.</span> 성격의 장단점</a></li>
                     <li><a href="#philosophy" class="nav-link"><span>03.</span> 생활신조</a></li>
-                    <li><a href="#experience" class="nav-link"><span>04.</span> 학창시절 경험</a></li>
+                    <li><a href="#experience" class="nav-link"><span>04.</span> 학습 및 훈련 경험</a></li>
                     <li><a href="#future" class="nav-link"><span>05.</span> 입사 후 포부</a></li>
                 </ol>
             </nav>
+            <div class="sidebar-footer">
+                <ul class="social-links">
+                    <li><a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
         </div>
     </aside>
+    
+    <!-- 우측 이메일 링크 -->
+    <div class="email-link-wrapper">
+        <a href="mailto:your.email@example.com" class="email-link">your.email@example.com</a>
+        <div class="email-link-line"></div>
+    </div>
 
     <!-- 메인 콘텐츠 -->
     <main class="main-wrapper">
@@ -36,18 +51,23 @@
                 <div class="intro-content">
                     <div class="intro-text">
                         <p class="intro-greeting">안녕하세요, 저는</p>
-                        <h1 class="intro-name">정은솔<span class="highlight">입니다.</span></h1>
-                        <h2 class="intro-title">특수교사 · 소프트웨어 개발자</h2>
+                        <h1 class="intro-name">김덕순<span class="highlight">입니다.</span></h1>
+                        <h2 class="intro-title">마약탐지견 · 공항 보안 전문가</h2>
                         <p class="intro-description">
-                            학생들과 세상을 연결 짓고 가치 있는 서비스를 제공하며, 
-                            <span class="highlight">학교 구성원들의 사용자 경험을 개선하는 기술적 솔루션</span>을 찾는 것을 좋아합니다.
+                            대한민국 하늘길의 안전을 지키는 마약탐지견을 꿈꾸며, 
+                            <span class="highlight">수많은 냄새가 뒤섞인 복잡한 공간에서도 위험한 냄새를 정확히 구분해내는 코</span>가 되고 싶습니다.
                         </p>
                         <a href="#motivation" class="cta-button">더 알아보기</a>
                     </div>
                     <div class="intro-image-wrapper">
-                        <div class="profile-image-container">
-                            <img src="IMG_9372.JPG" alt="정은솔 프로필 사진" class="profile-image">
-                            <div class="profile-image-border"></div>
+                        <div class="intro-image-container">
+                            <div class="intro-image-wrapper-inner">
+                                <img src="shareImage_1763104814.jpg" alt="김덕순 프로필 사진" class="intro-image" id="profileImage" onerror="this.onerror=null; this.src='IMG_0081.jpg'; this.onerror=function(){this.src='IMG_0308.jpg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};};">
+                                <div class="intro-image-placeholder" id="profilePlaceholder" style="display:none;">
+                                    <span>🐾</span>
+                                </div>
+                            </div>
+                            <div class="intro-image-border"></div>
                         </div>
                     </div>
                 </div>
@@ -60,21 +80,32 @@
                     <h2 class="section-title">지원 동기 및 포부</h2>
                 </div>
                 <div class="section-content">
-                    <p>안녕하세요. 소프트웨어 개발에 관심이 있는 특수교사로서 학생들과 세상을 연결 짓고 가치 있는 서비스를 제공하고 싶은 정은솔입니다.</p>
-                    <p>저는 대학에서 초등특수교육과 중등특수교육(체육)을 전공하며 특수교육의 기초를 다졌고, 대학원에서 AI융합교육전공을 선택하여 프로그래밍의 기초와 인공지능 기반의 교육프로그램을 공부하였습니다.</p>
-                    <p>빠르게 변화하는 IT 업계에서 새로운 기술을 학습하고 제가 몸담고 있는 학교현장에 적용하는 것에 큰 흥미를 느끼며, 특히 학교 구성원들의 사용자 경험을 개선하는 기술적 솔루션을 찾는 것을 좋아합니다.</p>
-                    <p>귀사는 혁신적인 기술력과 우수한 개발 문화로 업계에서 인정받고 있으며, 이러한 환경에서 저의 기술적 역량을 더욱 발전시키고 의미 있는 프로젝트에 기여하고 싶습니다.</p>
+                    <p>안녕하세요. 대한민국 하늘길의 안전을 지키는 마약탐지견을 꿈꾸는 김덕순입니다.</p>
+                    <p>저는 태어날 때부터 냄새에 남다른 관심과 열정을 가지고 있었습니다. 간식이 어디에 숨겨져 있든, 인형이 어디로 사라졌든 제 코는 항상 진실을 찾아냈습니다. 그동안 쌓아온 후각적 경험을 이제는 사회에 기여하고 싶어 공항공사 마약탐지견으로 지원하게 되었습니다.</p>
+                    <p>공항은 수많은 냄새가 뒤섞인 복잡한 공간이지만, 저는 그 안에서 위험한 냄새 하나를 정확히 구분해내는 코가 되고 싶습니다. 아직은 신입견이지만, 꾸준히 훈련받으며 대한민국의 하늘길을 더 안전하게 만드는 보안의 일원이 되고 싶습니다.</p>
                     
                     <div class="achievement-box">
-                        <h3 class="achievement-title">주요 경력 및 학력</h3>
+                        <h3 class="achievement-title">기본 정보</h3>
                         <ul class="achievement-list">
                             <li>
-                                <span class="achievement-year">2021</span>
-                                <span class="achievement-text">인천특수교사임용 초등특수 합격, 중등특수 합격</span>
+                                <span class="achievement-year">이름</span>
+                                <span class="achievement-text">김덕순</span>
                             </li>
                             <li>
-                                <span class="achievement-year">2023</span>
-                                <span class="achievement-text">연세대학교 교육대학원 AI융합교육전공 합격</span>
+                                <span class="achievement-year">출생지</span>
+                                <span class="achievement-text">전남 해남</span>
+                            </li>
+                            <li>
+                                <span class="achievement-year">거주지</span>
+                                <span class="achievement-text">서울</span>
+                            </li>
+                            <li>
+                                <span class="achievement-year">생년월</span>
+                                <span class="achievement-text">2023년 겨울</span>
+                            </li>
+                            <li>
+                                <span class="achievement-year">특기</span>
+                                <span class="achievement-text">전속력 달리기, 냄새 맡기</span>
                             </li>
                         </ul>
                     </div>
@@ -95,23 +126,23 @@
                                 <li>
                                     <div class="personality-header">
                                         <span class="personality-icon">▹</span>
-                                        <strong>꾸준한 학습 의지</strong>
+                                        <strong>뛰어난 후각 감각</strong>
                                     </div>
-                                    <p>새로운 기술 트렌드에 관심이 많아 개인 시간을 활용해 온라인 강의를 수강하고 사이드 프로젝트를 진행합니다.</p>
+                                    <p>6개월간의 간식찾기 훈련으로 어떤 냄새든 빠르게 구분할 수 있습니다.</p>
                                 </li>
                                 <li>
                                     <div class="personality-header">
                                         <span class="personality-icon">▹</span>
-                                        <strong>협업과 소통</strong>
+                                        <strong>끈기 있는 태도</strong>
                                     </div>
-                                    <p>팀 프로젝트에서 다른 개발자, 디자이너, 기획자와 원활히 소통하며 공동의 목표를 달성하는 것을 중요하게 생각합니다.</p>
+                                    <p>목표 냄새를 맡으면 포기하지 않습니다. 잠시 쉬어도 다시 코를 들이대는 근성이 있습니다.</p>
                                 </li>
                                 <li>
                                     <div class="personality-header">
                                         <span class="personality-icon">▹</span>
-                                        <strong>문제 해결 지향적</strong>
+                                        <strong>적극적인 성격</strong>
                                     </div>
-                                    <p>복잡한 버그나 기술적 이슈에 직면했을 때 포기하지 않고 다양한 접근 방법을 시도하여 해결책을 찾습니다.</p>
+                                    <p>새로운 사람이나 동료견을 만나면 먼저 다가가 인사합니다. 팀워크 형성에 강점이 있습니다.</p>
                                 </li>
                             </ul>
                         </div>
@@ -121,9 +152,16 @@
                                 <li>
                                     <div class="personality-header">
                                         <span class="personality-icon">▹</span>
-                                        <strong>완벽주의 성향</strong>
+                                        <strong>에너지 과다</strong>
                                     </div>
-                                    <p>때로는 코드의 완성도에 지나치게 집착하여 일정에 영향을 줄 수 있습니다. 이를 개선하기 위해 우선순위를 명확히 하고 적정 수준의 완성도를 목표로 하는 연습을 하고 있습니다.</p>
+                                    <p>반가운 사람을 만나면 흥분해 가슴높이까지 뛰어오르는 버릇이 있습니다. 현재는 훈련을 통해 차분한 자세를 익히는 중입니다.</p>
+                                </li>
+                                <li>
+                                    <div class="personality-header">
+                                        <span class="personality-icon">▹</span>
+                                        <strong>완벽주의적 냄새집착</strong>
+                                    </div>
+                                    <p>한 냄새에 몰입하면 다른 명령을 놓칠 때가 있습니다. 그래서 '우선순위 냄새 구분 훈련'을 병행하며 개선하고 있습니다.</p>
                                 </li>
                             </ul>
                         </div>
@@ -138,44 +176,72 @@
                     <h2 class="section-title">생활신조</h2>
                 </div>
                 <div class="section-content">
-                    <div class="philosophy-box">
-                        <blockquote class="quote">"다정한 사람이 되자"</blockquote>
-                        <p>교사이자 개발자로서 항상 사용자의 관점에서 생각하려 노력합니다. 아무리 기술적으로 뛰어난 코드라도 실제 사용자에게 도움이 되지 않는다면 의미가 없다고 생각합니다. 또한 더 직관적이고 친절한 기술은 모두에게 필요한 기술이라 믿습니다. 사용자가 더 편리하고 효율적으로 업무를 처리하고, 학교생활에 학습 동기를 높이도록 돕는 것이 개발자의 사명이라고 믿습니다.</p>
+                    <div class="philosophy-content-wrapper">
+                        <div class="philosophy-image-wrapper">
+                            <div class="philosophy-image-container">
+                                <div class="philosophy-image-wrapper-inner">
+                                    <img src="IMG_4011.JPG" alt="김덕순 - 생활신조" class="philosophy-image" id="philosophyImage" onerror="this.onerror=null; this.src='IMG_0308.jpg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';};">
+                                    <div class="philosophy-image-placeholder" style="display:none;">
+                                        <span>🐾</span>
+                                    </div>
+                                </div>
+                                <div class="philosophy-image-border"></div>
+                            </div>
+                        </div>
+                        <div class="philosophy-box">
+                            <blockquote class="quote">"코로 세상을 이해하자"</blockquote>
+                            <p>저에게 냄새는 단순한 자극이 아니라 정보입니다. 사람의 말보다 코가 더 솔직하다는 걸 잘 압니다. 그래서 언제나 냄새로 세상을 관찰하며, 다정하지만 냉철한 탐지견이 되기 위해 노력합니다.</p>
+                            <p>누군가의 여행이 안전하고 즐거울 수 있도록, 제 코를 통해 작은 위험 하나라도 미리 찾아내는 것이 제 사명입니다.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 학창시절 경험 및 특이사항 -->
+            <!-- 학습 및 훈련 경험 -->
             <section id="experience" class="section">
                 <div class="section-header">
                     <span class="section-number">04.</span>
-                    <h2 class="section-title">학창시절 경험 및 특이사항</h2>
+                    <h2 class="section-title">학습 및 훈련 경험</h2>
                 </div>
                 <div class="section-content">
                     <ul class="experience-list">
                         <li class="experience-item">
                             <div class="experience-header">
-                                <h3 class="experience-title">해커톤 우수상 수상</h3>
-                                <span class="experience-period">대학교 3학년</span>
+                                <h3 class="experience-title">간식찾기 미션 6회 연속 성공</h3>
+                                <span class="experience-period">훈련소 예비과정</span>
                             </div>
-                            <p>교내 해커톤에서 "지역 상권 활성화 앱"을 개발하여 우수상을 수상했습니다. 이 프로젝트에서 팀장을 맡아 5명의 팀원과 함께 48시간 동안 React Native로 모바일 앱을 완성했습니다.</p>
-                            <p>특히 백엔드 API 설계부터 프론트엔드 구현까지 전 과정에 참여하면서 풀스택 개발 경험을 쌓을 수 있었고, 짧은 시간 내에 팀원들의 역량을 파악하고 업무를 효율적으로 분배하는 리더십을 발휘했습니다.</p>
+                            <p>훈련소 예비과정에서 '간식찾기' 미션을 6회 연속 성공하며 예비탐지견으로 선발되었습니다. 다양한 난이도의 숨겨진 간식을 정확히 찾아내는 능력을 인정받았습니다.</p>
+                            <p>특히 시간 제한이 있는 상황에서도 침착함을 유지하며 목표물을 찾아내는 집중력과 끈기를 발휘했습니다.</p>
                             <ul class="tech-tags">
-                                <li>React Native</li>
-                                <li>Full Stack</li>
-                                <li>Team Leadership</li>
+                                <li>후각 훈련</li>
+                                <li>집중력</li>
+                                <li>정확도</li>
                             </ul>
                         </li>
                         <li class="experience-item">
                             <div class="experience-header">
-                                <h3 class="experience-title">컴퓨터공학과 학회 멘토링</h3>
-                                <span class="experience-period">대학교 4년간</span>
+                                <h3 class="experience-title">인형 물어뜯기 훈련</h3>
+                                <span class="experience-period">기초 훈련</span>
                             </div>
-                            <p>컴퓨터공학과 학회에서 활동하며 후배들에게 프로그래밍을 가르치는 멘토링을 진행했습니다. 복잡한 개념을 쉽게 설명하는 능력을 기를 수 있었고, 이는 현재 팀 내에서 코드 리뷰와 기술 공유를 할 때 큰 도움이 되고 있습니다.</p>
+                            <p>인형 물어뜯기 훈련에서는 목표 집중력과 물기 조절 능력을 동시에 익혔습니다. 과도한 힘을 사용하지 않으면서도 목표물을 확실히 파악하는 기술을 습득했습니다.</p>
+                            <p>다만 산책이 부족할 경우 의사표현이 다소 격렬한 편이며, 현재는 핸들러의 지시에 더 유연하게 반응하는 훈련을 진행하고 있습니다.</p>
                             <ul class="tech-tags">
-                                <li>Mentoring</li>
-                                <li>Teaching</li>
-                                <li>Knowledge Sharing</li>
+                                <li>물기 조절</li>
+                                <li>집중력</li>
+                                <li>순응성</li>
+                            </ul>
+                        </li>
+                        <li class="experience-item">
+                            <div class="experience-header">
+                                <h3 class="experience-title">다양한 환경에서의 후각 훈련</h3>
+                                <span class="experience-period">현재 진행 중</span>
+                            </div>
+                            <p>특히 다양한 환경에서 냄새를 맡는 경험을 쌓기 위해 공원, 시장, 지하철역 등 여러 장소에서 후각 훈련을 이어가고 있습니다. 이러한 경험은 향후 공항이라는 복합적인 공간에서 큰 강점이 될 것입니다.</p>
+                            <p>각 환경마다 다른 냄새 배경 속에서도 목표 냄새를 정확히 구분해내는 능력을 키워가고 있습니다.</p>
+                            <ul class="tech-tags">
+                                <li>환경 적응</li>
+                                <li>냄새 구분</li>
+                                <li>실전 준비</li>
                             </ul>
                         </li>
                     </ul>
@@ -195,28 +261,28 @@
                                 <span class="future-icon">▹</span>
                                 <h3 class="future-title">초기 적응</h3>
                             </div>
-                            <p>입사 후에는 먼저 귀사의 개발 문화와 코딩 컨벤션에 빠르게 적응하여 팀의 일원으로서 역할을 다하겠습니다.</p>
+                            <p>입사 후에는 먼저 공항의 냄새 환경과 탐지 프로세스에 빠르게 적응하겠습니다. 새로운 환경에서도 침착하게 업무를 수행하며, 핸들러와의 신뢰 관계를 구축하겠습니다.</p>
                         </li>
                         <li class="future-item">
                             <div class="future-header">
                                 <span class="future-icon">▹</span>
                                 <h3 class="future-title">단기 목표</h3>
                             </div>
-                            <p>단기적으로는 맡은 업무를 성실히 수행하면서 귀사의 비즈니스 도메인에 대한 이해도를 높이고, 기존 팀원들과의 협업을 통해 개발 실력을 향상시키겠습니다.</p>
+                            <p>단기적으로는 선임 탐지견들의 탐지 방식을 관찰하며 제 후각 데이터를 체계적으로 정리할 계획입니다. 실전 현장에서의 경험을 쌓아가며 정확도와 효율성을 높이겠습니다.</p>
                         </li>
                         <li class="future-item">
                             <div class="future-header">
                                 <span class="future-icon">▹</span>
                                 <h3 class="future-title">중장기 목표</h3>
                             </div>
-                            <p>중장기적으로는 기술 리더로 성장하여 주니어 개발자들을 멘토링하고, 새로운 기술 도입과 개발 프로세스 개선에 기여하고 싶습니다. 특히 클라우드 기술과 마이크로서비스 아키텍처에 대한 전문성을 쌓아 서비스의 확장성과 안정성 향상에 기여하겠습니다.</p>
+                            <p>중장기적으로는 마약뿐만 아니라 금지 물품, 위험 물질까지 구분할 수 있는 다목적 탐지견으로 성장하겠습니다. 다양한 위험 요소를 탐지하여 공항 보안의 핵심 인력이 되겠습니다.</p>
                         </li>
                         <li class="future-item">
                             <div class="future-header">
                                 <span class="future-icon">▹</span>
                                 <h3 class="future-title">궁극적 목표</h3>
                             </div>
-                            <p>궁극적으로는 귀사와 함께 성장하여 IT 업계에서 인정받는 개발자가 되고, 사용자에게 진정한 가치를 제공하는 혁신적인 서비스 개발에 핵심적인 역할을 담당하고 싶습니다.</p>
+                            <p>궁극적으로는 "덕순이가 있으면 공항은 안전하다"는 말을 듣는, 신뢰받는 탐지견이 되고 싶습니다. 공항공사와 함께 대한민국의 하늘길을 지키며, 사람들에게 '든든한 코 하나'의 가치를 보여드리겠습니다.</p>
                         </li>
                     </ul>
                 </div>
@@ -228,7 +294,7 @@
     <footer class="footer">
         <div class="footer-content">
             <p>Built with HTML, CSS & JavaScript</p>
-            <p>&copy; 2024 정은솔. All rights reserved.</p>
+            <p>&copy; 2024 김덕순. All rights reserved.</p>
         </div>
     </footer>
 
