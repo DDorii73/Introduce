@@ -255,7 +255,41 @@ footer{font-size:13px}
   .brand-roman{font-size:9px}
 }
 
-</style>
+
+/* Side projects — calm, original illustrative mockups with consistent cards */
+.project-platform{display:inline-block;vertical-align:middle;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:0;margin-left:5px}
+.project-plan{font-size:14px;line-height:1.75;color:var(--ink-2);margin-top:13px;padding:12px 13px;background:#f6f7f9;border-left:2px solid #b4c7f8;border-radius:2px}
+.project-plan strong{font-weight:700;color:var(--ink);margin-right:6px}
+.visual-pet,.visual-reading-drawer,.visual-place,.visual-outfit{display:flex;align-items:center;justify-content:center;background:#f6f7f9}
+.pet-desktop{height:155px;width:78%;max-width:310px;background:#e9eef6;border:1px solid #c9d4e4;border-radius:8px;overflow:hidden;box-shadow:0 8px 20px #1b2b4314}
+.pet-window{height:28px;background:#fff;display:flex;align-items:center;gap:5px;padding:0 10px}
+.pet-window span{width:6px;height:6px;border-radius:50%;background:#d5dce7}
+.pet-window b{font-size:9px;letter-spacing:.11em;color:#73849a;margin-left:auto}
+.pet-screen{height:104px;position:relative;display:grid;place-items:end center;background:linear-gradient(160deg,#e9f1f2,#dce7eb);overflow:hidden}
+.pet-animal{z-index:1;font-size:39px;line-height:1;transform:translateY(-6px)}
+.pet-moon{position:absolute;right:18px;top:3px;font-size:19px;color:#7ca2b2}
+.pet-path{position:absolute;bottom:11px;left:9%;width:82%;height:1px;border-bottom:2px dashed #8ba6af}
+.pet-taskbar{display:flex;gap:10px;align-items:center;padding-left:12px;height:23px;background:#d4dce8;color:#5c6d8c;font-size:10px}
+.drawer-phone{height:187px;width:114px;border:6px solid #394c68;border-radius:18px;background:#fff;box-shadow:0 8px 20px #1b2b4319;padding:9px 7px;position:relative}
+.drawer-top{height:5px;width:31px;background:#d4dce7;border-radius:6px;margin:0 auto 10px}
+.drawer-page{padding:9px 5px;background:#f8f7f3;height:135px;border-radius:3px}
+.drawer-page>span{font-size:7px;letter-spacing:.09em;font-weight:800;color:#6e7887;display:block;margin-bottom:12px}
+.drawer-page i{display:block;background:#b9c2ce;width:100%;height:5px;margin:9px 0;border-radius:2px}
+.drawer-page i:nth-of-type(2){width:79%}
+.drawer-page i.drawer-selected{background:#d0dffc;outline:2px solid #6d9ae9}
+.drawer-page i:nth-of-type(5){width:65%}
+.drawer-selection{font-size:7px;background:#2551e6;color:#fff;text-align:center;padding:3px 0;width:55px;border-radius:4px;margin:3px auto}
+.drawer-home{width:23px;height:3px;border-radius:3px;background:#a1b0c1;margin:5px auto}
+.place-panel{display:grid;grid-template-columns:108px 1fr;align-items:stretch;width:min(80%,320px);height:143px;background:#fff;border:1px solid #dde3ee;border-radius:9px;overflow:hidden;box-shadow:0 10px 24px #1b2b4312}
+.place-image{display:grid;place-items:center;font-size:43px;background:#f2e9da}
+.place-info{padding:16px 14px}.place-info .place-kicker{display:block;font-size:8px;color:#4e73a7;letter-spacing:.08em;font-weight:800;margin-bottom:7px}.place-info strong{font-size:13px;color:#26354c;display:block;margin-bottom:10px}.place-info i{display:block;width:85%;height:5px;border-radius:3px;background:#dce1e8;margin-bottom:7px}.place-info i.short{width:58%}.place-mini{display:flex;gap:5px;margin-top:10px;flex-wrap:wrap}.place-mini span{font-size:8px;padding:3px 5px;background:#eef2f9;border-radius:4px;color:#47658f}
+.outfit-board{width:min(80%,325px);height:157px;background:#fff;border:1px solid #dce3eb;border-radius:10px;padding:17px;box-shadow:0 9px 24px #1b2b4312}
+.outfit-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;color:#26354c}.outfit-top strong{font-size:13px}.outfit-top span{font-size:12px;background:#f0f4f8;padding:4px 7px;border-radius:6px;color:#5c748f}
+.outfit-closet{display:flex;align-items:center;justify-content:space-evenly;gap:7px}.outfit-closet>span{font-size:12px;color:#b7c0cc}
+.outfit-piece{height:54px;flex:1;display:grid;place-items:center;background:#f0f2f5;border-radius:7px;font-size:26px}.outfit-bottom{display:flex;gap:6px;margin-top:11px}.outfit-bottom i{height:5px;background:#d5deea;flex:1;border-radius:5px}.outfit-bottom i.short{flex:.55}
+@media(max-width:720px){.project-platform{font-size:11px}.project-plan{font-size:13px}.pet-desktop{width:82%}.place-panel{width:86%}.outfit-board{width:85%}}
+
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -299,7 +333,7 @@ footer{font-size:13px}
         <button type="button" class="filter-button" aria-pressed="false" data-filter="class">수업설계</button>
         <button type="button" class="filter-button" aria-pressed="false" data-filter="research">연구</button>
         <button type="button" class="filter-button" aria-pressed="false" data-filter="book">교재집필</button>
-        <button type="button" class="filter-button" aria-pressed="false" data-filter="personal">개인공작소</button>
+        <button type="button" class="filter-button" aria-pressed="false" data-filter="personal">사이드 프로젝트</button>
       </div>
 
       <div class="project-grid">
@@ -372,11 +406,64 @@ footer{font-size:13px}
         <article class="project-card" data-category="personal">
           <div class="project-visual visual-memory" aria-hidden="true"><div class="chat-window"><div class="bubble"></div><div class="bubble right"></div><div class="bubble small"></div><div class="bubble right"></div></div></div>
           <div class="project-info">
-            <div class="project-kicker"><span>PERSONAL LAB · AI</span><span class="status">기획·프로토타입</span></div>
-            <h3>기억의 온도</h3>
-            <p>과거 대화 기록을 통해 추억을 회상하는 개인용 앱. 기록된 정보와 새로 생성된 응답을 구분하고 프라이버시 중심의 UX를 설계했습니다.</p>
-            <div class="project-tags"><span>대화 AI</span><span>UX</span><span>개인정보 보호</span></div>
-            <div class="project-footer"><span class="unavailable">개인 실험 · 비공개</span></div>
+            <div class="project-kicker"><span>SIDE PROJECT · MOBILE AI</span><span class="status">기획·프로토타입</span></div>
+            <h3>기억공작소 <span class="project-platform">모바일 앱</span></h3>
+            <p>세상을 떠난 가족·친구와 나눈 과거 대화 기록을 바탕으로, 익숙한 말투와 추억을 떠올리며 일상의 대화를 이어 갈 수 있도록 구상한 앱입니다.</p>
+            <div class="project-plan"><strong>향후 구상</strong> 사진과 목소리 자료를 활용한 음성통화 및 영상통화 형태의 상호작용</div>
+            <div class="project-tags"><span>대화 AI</span><span>기록 기반 회상</span><span>프라이버시</span></div>
+            <div class="project-footer"><span class="unavailable">개인 프로젝트 · 비공개</span></div>
+          </div>
+        </article>
+        <article class="project-card" data-category="personal">
+          <div class="project-visual visual-pet" aria-hidden="true"><div class="pet-desktop">
+            <div class="pet-window"><span></span><span></span><span></span><b>DESKTOP PET</b></div>
+            <div class="pet-screen"><span class="pet-moon">☼</span><span class="pet-animal">🦔</span><span class="pet-path"></span></div>
+            <div class="pet-taskbar"><span>◈</span><span>▦</span><span>◷</span></div>
+          </div></div>
+          <div class="project-info">
+            <div class="project-kicker"><span>SIDE PROJECT · DESKTOP APP</span><span class="status">프로토타입</span></div>
+            <h3>데스크탑펫 (뾰쭉이) <span class="project-platform">Windows · Mac</span></h3>
+            <p>바탕화면에서 놀고, 산책을 다녀오기도 하는 고슴도치 캐릭터를 기르는 데스크톱 펫 프로젝트입니다. Windows와 macOS 환경을 고려해 제작합니다.</p>
+            <div class="project-tags"><span>데스크톱 펫</span><span>고슴도치</span><span>인터랙션</span></div>
+            <div class="project-footer"><span class="unavailable">개인 제작 프로젝트</span></div>
+          </div>
+        </article>
+        <article class="project-card" data-category="personal">
+          <div class="project-visual visual-reading-drawer" aria-hidden="true">
+            <div class="drawer-phone"><div class="drawer-top"></div><div class="drawer-page"><span>THE READING NOTE</span><i></i><i></i><i class="drawer-selected"></i><i></i><i></i><div class="drawer-selection">문장 저장 +</div></div><div class="drawer-home"></div></div>
+          </div>
+          <div class="project-info">
+            <div class="project-kicker"><span>SIDE PROJECT · READING APP</span><span class="status">기획·개발 중</span></div>
+            <h3>서랍형 독서 <span class="project-platform">모바일 앱</span></h3>
+            <p>종이책에서 기록하고 싶은 문구를 휴대전화로 촬영하고 드래그해 선택하면, 책 정보·페이지·문구를 함께 저장하도록 설계한 독서 기록 앱입니다.</p>
+            <div class="project-plan"><strong>향후 구상</strong> 전자책 화면을 캡처한 뒤 문구를 선택해 기록하는 기능</div>
+            <div class="project-tags"><span>독서 기록</span><span>촬영·문구 선택</span><span>아카이빙</span></div>
+            <div class="project-footer"><span class="unavailable">개인 제작 프로젝트</span></div>
+          </div>
+        </article>
+        <article class="project-card" data-category="personal">
+          <div class="project-visual visual-place" aria-hidden="true">
+            <div class="place-panel"><div class="place-image">🍽️</div><div class="place-info"><span class="place-kicker">MY FOOD ARCHIVE</span><strong>오늘의 맛집 기록</strong><i></i><i class="short"></i><div class="place-mini"><span>⌖ 위치 후보</span><span>✦ 메뉴 분석</span></div></div></div>
+          </div>
+          <div class="project-info">
+            <div class="project-kicker"><span>SIDE PROJECT · FOOD ARCHIVE</span><span class="status">기획·개발 중</span></div>
+            <h3>나의맛집플레이스 <span class="project-platform">모바일 앱</span></h3>
+            <p>다녀온 음식점을 나만의 목록으로 기록하는 앱입니다. 음식 사진을 분석해 위치와 메뉴 정보를 제안받고, 식당 이름을 확인·저장해 방문 목록을 관리하도록 설계합니다.</p>
+            <div class="project-tags"><span>음식 사진 AI</span><span>장소 기록</span><span>나만의 리스트</span></div>
+            <div class="project-footer"><span class="unavailable">개인 제작 프로젝트</span></div>
+          </div>
+        </article>
+        <article class="project-card" data-category="personal">
+          <div class="project-visual visual-outfit" aria-hidden="true">
+            <div class="outfit-board"><div class="outfit-top"><strong>오늘 뭐 입지?</strong><span>☀ 17°</span></div><div class="outfit-closet"><div class="outfit-piece">🧥</div><span>＋</span><div class="outfit-piece">👖</div><span>＋</span><div class="outfit-piece">👟</div></div><div class="outfit-bottom"><i></i><i></i><i class="short"></i></div></div>
+          </div>
+          <div class="project-info">
+            <div class="project-kicker"><span>SIDE PROJECT · WARDROBE APP</span><span class="status">기획·개발 중</span></div>
+            <h3>오늘뭐입지 <span class="project-platform">모바일 앱</span></h3>
+            <p>현재 위치의 날씨, 내 옷장에 등록된 옷, 과거 착장 기록을 함께 활용해 날씨에 맞는 코디를 추천하도록 구상한 앱입니다.</p>
+            <div class="project-plan"><strong>옷장 관리</strong> 구매·처분한 옷을 추가·삭제하고 색상과 보온성을 반영해 코디를 제안</div>
+            <div class="project-tags"><span>위치 기반 날씨</span><span>옷장 관리</span><span>코디 추천</span></div>
+            <div class="project-footer"><span class="unavailable">개인 제작 프로젝트</span></div>
           </div>
         </article>
       </div>
