@@ -8,9 +8,9 @@
   <meta property="og:title" content="정은솔 | AI × Special Education">
   <meta property="og:description" content="Special Education · AI · Research · Development">
   <title>정은솔 | Special Education × AI</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root{
       --paper:#f6f2ea;--paper-2:#efe9df;--surface:#fffdf9;
@@ -158,6 +158,82 @@
     }
     @media(max-width:380px){.navigation a:nth-child(2){display:none}.hero-art .art-title{font-size:33px}.fact strong{font-size:26px}.history-row{grid-template-columns:101px 1fr;gap:9px}.history-row strong{font-size:13px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-card,.button-primary{transition:none}}
+  
+/* Readability & cohesive visual system — reference-inspired, independently authored */
+:root{--paper:#fff;--paper-2:#f6f7f9;--surface:#fff;--ink:#16181d;--ink-2:#4b535f;--muted:#626b77;--rust:#2551e6;--rust-light:#eef1fe;--blue:#2551e6;--line:#d9dbe0;--shadow:0 8px 24px #16181d0b}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{background:#fff;color:#16181d;font:400 16px/1.78 'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;letter-spacing:-.01em;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+.serif,.hero h1,.hero-art .art-title,.hero-art .art-monogram{font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif}
+.shell{max-width:1160px;padding-left:clamp(20px,4vw,44px);padding-right:clamp(20px,4vw,44px)}
+.topbar{background:#fffffff5;border-color:var(--line)}.topbar-inner{height:74px}
+.brand{font-size:20px;letter-spacing:-.035em}.brand-mark{font:700 19px 'Pretendard',sans-serif;color:var(--blue)}
+.navigation{font-size:14px;font-weight:600;gap:25px}.navigation a:hover{color:var(--blue)}.nav-contact{border-color:var(--line);border-radius:8px}
+.hero{min-height:auto;padding-top:85px;padding-bottom:75px;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:36px}
+.eyebrow,.section-index,.project-kicker,.pub-number{font-size:12px;letter-spacing:.035em;font-weight:650;color:var(--muted)}
+.hero .eyebrow{color:var(--blue)}.hero h1{font-size:clamp(37px,4.1vw,57px);font-weight:750;line-height:1.29;letter-spacing:-.044em}.hero h1 em{color:var(--blue)}
+.hero-intro{font-size:17px;color:var(--ink-2);line-height:1.83;max-width:640px}
+.hero-art{min-height:335px;background:#f6f7f9;color:var(--ink);border:1px solid var(--line);box-shadow:none;border-radius:12px;padding:27px}
+.hero-art:before{border-color:#d3dcf6;box-shadow:0 0 0 40px #eef1fe,0 0 0 80px #eef1fe80}
+.hero-art:after{border-color:#d3dcf6;opacity:.6}
+.hero-art .art-monogram{color:var(--blue);font-weight:700;font-size:22px}
+.hero-art .art-title{font-size:clamp(32px,3.1vw,45px);font-weight:800;letter-spacing:-.045em;line-height:1.16}
+.hero-art .art-title span{font:700 .8em/1.1 'Pretendard',sans-serif;color:var(--blue);letter-spacing:-.025em;margin-bottom:16px}
+.hero-art .art-lines{border-color:var(--blue)}
+.button-primary{font-size:15px;background:var(--blue);border-color:var(--blue);border-radius:8px;padding:12px 21px}
+.button-primary:hover{background:#1c3fb5;border-color:#1c3fb5}
+.text-link{font-size:15px;border-color:var(--line)}.text-link:hover{color:var(--blue)}
+.facts{border-color:var(--line);margin-bottom:88px}.fact{padding:25px}.fact:first-child{border-color:var(--line);padding-left:0}
+.fact strong{font-size:36px;letter-spacing:-.04em}.fact span{font-size:16px;color:var(--ink-2)}
+section.block{padding-bottom:94px}
+.section-heading{position:relative;padding-top:18px;margin-bottom:29px}
+.section-heading:before{content:'';position:absolute;left:0;top:0;width:50px;height:4px;border-radius:3px;background:var(--blue)}
+.section-heading h2{font-size:clamp(30px,3.5vw,41px);font-weight:750;letter-spacing:-.035em}
+.filter-button{font-size:14px;font-weight:600;border-radius:8px;padding:10px 15px;border-color:var(--line);color:var(--ink-2)}
+.filter-button[aria-pressed=true]{background:var(--blue);border-color:var(--blue)}
+.project-grid,.publication-grid{gap:16px}
+.project-card,.publication-card,.career-panel,.edu-panel{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:none;overflow:hidden}
+.project-card:hover{transform:none;box-shadow:var(--shadow);border-color:#bcc7e2}
+.project-visual{height:215px;border-bottom:1px solid var(--line);background:#f6f7f9}
+.visual-reading,.visual-food,.visual-class,.visual-research,.visual-book,.visual-memory{background:#f6f7f9}
+.project-visual:after{background:linear-gradient(115deg,#ffffff12,#eef1fe55)}
+.mock-panel,.visual-food .mock-panel,.line-chart,.chat-window,.tiny-book{transform:none;box-shadow:0 7px 20px #1b2b4314}
+.project-signet{color:#3d4e67}.project-signet small{font-size:11px;color:var(--blue)}
+.project-info{padding:26px}.project-kicker{font-size:12px;color:var(--blue)}
+.status{font-size:12px;letter-spacing:0;color:var(--muted)}
+.project-info h3{font-size:21px;line-height:1.45;font-weight:700;letter-spacing:-.03em}
+.project-info p{font-size:15.5px;line-height:1.78;color:var(--ink-2);min-height:0}
+.project-tags span,.pub-labels span{font-size:12px;font-weight:500;background:#f0f2f5;border-radius:6px;color:var(--muted);padding:6px 9px}
+.project-footer{font-size:14px;border-color:var(--line)}
+.project-footer a,.detail-panel a{color:var(--blue)}.project-footer .unavailable{color:var(--muted)}
+.career-panel{padding:10px 30px}
+.career-entry{display:grid;grid-template-columns:210px minmax(0,1fr);gap:24px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.career-entry:last-child{border:0}
+.career-date{font:500 13px/1.55 'JetBrains Mono','Pretendard',sans-serif;color:var(--muted)}
+.career-entry strong{font-size:18px;font-weight:700;line-height:1.6}
+.publication-card{padding:27px}.publication-card h3{font-size:21px;font-weight:700;letter-spacing:-.025em;margin:13px 0}
+.publication-card p{font-size:15.5px;color:var(--ink-2);line-height:1.82}
+.pub-number{font-size:12px}.pub-icon{font-size:21px;color:var(--blue)}
+.more-button{font-size:14px;color:var(--blue);border-color:var(--blue)}
+.detail-panel{background:#f6f7f9;border-left:3px solid var(--blue)}.detail-panel p{font-size:14.5px}.detail-panel a{font-size:14px}
+.education-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.edu-panel{padding:27px 25px;overflow:visible}
+.edu-panel h3{font-size:15px;font-weight:700;color:var(--muted);margin:0 0 23px}
+.edu-list-item{padding:0 0 21px;margin-bottom:21px;border-bottom:1px solid var(--line)}
+.edu-list-item:last-child{padding-bottom:0;margin-bottom:0;border:0}
+.edu-name{font-size:16px;font-weight:700;line-height:1.53;letter-spacing:-.017em}
+.edu-sub{font-size:14px;color:var(--muted);line-height:1.58;margin-top:8px}
+.edu-chip{display:inline-flex;vertical-align:middle;font-size:12px;font-weight:650;color:#254db3;background:#eef1fe;border-radius:6px;padding:3px 8px;margin-left:3px}
+.skill-summary{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.skill-summary span{font-size:13px;color:var(--ink-2);border:1px solid var(--line);border-radius:7px;padding:7px 11px}
+.contact-section{background:#f6f7f9;border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:43px 44px}
+.contact-section .eyebrow{color:var(--blue)}
+.contact-section h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em;font-weight:700}
+.contact-section p{font-size:15px;color:var(--ink-2)}.contact-section a{color:#fff;background:var(--blue)}
+footer{font-size:13px}
+@media(max-width:1000px){.education-panels{grid-template-columns:1fr}.hero{grid-template-columns:minmax(0,1fr) 300px}.hero-art .art-title{font-size:34px}}
+@media(max-width:720px){.navigation{font-size:12px;gap:10px}.hero{grid-template-columns:1fr;padding-top:40px;padding-bottom:55px}.hero-art{grid-row:1;min-height:235px;padding:23px}.hero-art .art-title{font-size:clamp(35px,8vw,48px)}.hero h1{font-size:clamp(32px,7.8vw,46px)}.hero-intro{font-size:16px}.facts{margin-bottom:70px}.fact{padding:18px 10px}.fact strong{font-size:30px}.fact span{font-size:14px}section.block{padding-bottom:70px}.project-info{padding:22px}.project-info p,.publication-card p{font-size:15px}.publication-card{padding:23px}.career-panel{padding:5px 20px}.career-entry{grid-template-columns:1fr;gap:5px;padding:19px 0}.career-date{font-size:12px}.career-entry strong{font-size:16px}.contact-section{padding:30px 23px}.contact-section p{font-size:14px}}
+@media(max-width:380px){.navigation a:nth-child(2){display:none}.hero-art .art-title{font-size:33px}}
+
   </style>
 </head>
 <body>
@@ -166,9 +242,9 @@
       <a class="brand" href="#top" aria-label="정은솔 포트폴리오 첫 화면"><span class="brand-mark">ES.</span>정은솔</a>
       <nav class="navigation" aria-label="주요 메뉴">
         <a href="#projects">대표작업</a>
-        <a href="#background">경력·학력</a>
+        <a href="#background">경력</a>
         <a href="#publication">집필·강의</a>
-        <a href="#expertise">자격·역량</a>
+        <a href="#expertise">학력·자격</a>
         <a class="nav-contact" href="#contact">연락 ↗</a>
       </nav>
     </div>
@@ -181,7 +257,7 @@
         <p class="hero-intro">특수교육 현장에서 발견한 문제를 바탕으로 AI 기반 교육도구를 개발하고, 데이터와 교육공학을 연결하여 장애학생의 배움과 참여를 넓히는 방법을 탐색합니다.</p>
         <div class="hero-actions">
           <a class="button-primary" href="#projects">대표작업 보기 <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="#background">경력과 학력</a>
+          <a class="text-link" href="#background">경력 보기</a>
         </div>
       </div>
       <div class="hero-art" role="img" aria-label="AI와 특수교육의 융합을 의미하는 타이포그래피 AI × Special Education">
@@ -287,23 +363,7 @@
       </div>
     </section>
 
-    <section class="block" id="background">
-      <div class="section-heading"><div><div class="section-index">02 / EXPERIENCE & EDUCATION</div><h2>경력 및 학력</h2></div></div>
-      <div class="history-grid">
-        <div>
-          <h3 class="subheading">경력 <span style="font-weight:500;color:var(--muted);font-size:12px">Experience</span></h3>
-          <div class="history-row"><time datetime="2026-03">2026.03 ~ 현재</time><strong>인천남부특수교육지원센터</strong></div>
-          <div class="history-row"><time datetime="2024-03">2024.03 ~ 2026.02</time><strong>운서중학교</strong></div>
-          <div class="history-row"><time datetime="2021-03">2021.03 ~ 2024.02</time><strong>영종중학교</strong></div>
-          <div class="history-row milestone"><span class="date">2021학년도</span><strong>인천 중등특수교사 임용시험 · 초등특수교사 임용시험 동시 합격</strong></div>
-        </div>
-        <div>
-          <h3 class="subheading">학력 <span style="font-weight:500;color:var(--muted);font-size:12px">Education</span></h3>
-          <div class="degree"><small>MASTER'S DEGREE · 2026.08</small><h3>연세대학교 교육대학원</h3><p>인공지능융합교육 전공 · 석사</p></div>
-          <div class="degree"><small>BACHELOR'S DEGREE · 2019.02</small><h3>나사렛대학교</h3><p>초등특수교육과 · 중등특수교육과 학사</p></div>
-        </div>
-      </div>
-    </section>
+    <section class="block" id="background"><div class="section-heading"><div><div class="section-index">02 / EXPERIENCE</div><h2>경력</h2></div></div><div class="career-panel"><div class="career-entry"><span class="career-date">2026.03 — 현재</span><strong>인천남부특수교육지원센터</strong></div><div class="career-entry"><span class="career-date">2024.03 — 2026.02</span><strong>운서중학교</strong></div><div class="career-entry"><span class="career-date">2021.03 — 2024.02</span><strong>영종중학교</strong></div><div class="career-entry"><span class="career-date">2021학년도</span><strong>인천 중등특수교사·초등특수교사 임용시험 동시 합격</strong></div></div></section>
 
     <section class="block" id="publication">
       <div class="section-heading"><div><div class="section-index">03 / PUBLICATION & TEACHING</div><h2>교재 집필 및 강의</h2></div></div>
@@ -350,24 +410,24 @@
       </div>
     </section>
 
-    <section class="block" id="expertise">
-      <div class="section-heading"><div><div class="section-index">04 / CREDENTIALS & EXPERTISE</div><h2>자격 및 전문 역량</h2></div></div>
-      <div class="qualification-grid">
-        <div class="qualification-panel"><h3>자격증 · Certifications</h3>
-          <div class="credential"><span>중등 특수학교 1급 정교사</span><small>TEACHING</small></div>
-          <div class="credential"><span>초등 특수학교 2급 정교사</span><small>TEACHING</small></div>
-          <div class="credential"><span>ADsP · 데이터분석 준전문가</span><small>DATA</small></div>
-          <div class="credential"><span>AICE Basic</span><small>AI</small></div>
-          <div class="credential"><span>Google Certified Educator Level 1</span><small>EDTECH</small></div>
-        </div>
-        <div class="qualification-panel"><h3>전문 활동 · Professional Development</h3>
-          <div class="credential"><span>인천 AI 선도교사</span><small>AI EDUCATION</small></div>
-          <div class="skill-grid" aria-label="전문 역량">
-            <span>특수교육</span><span>교육공학</span><span>생성형 AI</span><span>데이터 분석</span><span>Python</span><span>STT</span><span>Firebase</span><span>Vite</span><span>Netlify</span><span>Cursor</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="block" id="expertise"><div class="section-heading"><div><div class="section-index">04 / EDUCATION & CREDENTIALS</div><h2>학력·자격</h2></div></div>
+<div class="education-panels">
+  <div class="edu-panel"><h3>학력</h3>
+  <div class="edu-list-item"><div class="edu-name">연세대학교 교육대학원 <span class="edu-chip">석사</span></div><div class="edu-sub">2026.08 졸업 · 인공지능융합교육</div></div>
+  <div class="edu-list-item"><div class="edu-name">나사렛대학교 <span class="edu-chip">학사</span></div><div class="edu-sub">2019.02 졸업 · 초등특수교육과·중등특수교육과</div></div>
+  </div>
+  <div class="edu-panel"><h3>교원 자격·전문활동</h3>
+  <div class="edu-list-item"><div class="edu-name">중등 특수학교 1급 정교사</div><div class="edu-sub">교원 자격</div></div>
+  <div class="edu-list-item"><div class="edu-name">초등 특수학교 2급 정교사</div><div class="edu-sub">교원 자격</div></div>
+  <div class="edu-list-item"><div class="edu-name">인천 AI 선도교사</div><div class="edu-sub">AI·디지털 교육 전문활동</div></div>
+  </div>
+  <div class="edu-panel"><h3>AI·데이터 자격</h3>
+  <div class="edu-list-item"><div class="edu-name">ADsP</div><div class="edu-sub">데이터분석 준전문가</div></div>
+  <div class="edu-list-item"><div class="edu-name">AICE Basic</div><div class="edu-sub">인공지능 활용 역량</div></div>
+  <div class="edu-list-item"><div class="edu-name">Google Certified Educator Level 1</div><div class="edu-sub">Google 교육 도구 활용 역량</div></div>
+  </div>
+</div><div class="skill-summary"><span>Special Education</span><span>AI & Data</span><span>EdTech</span><span>Python</span><span>Vite · Firebase</span></div>
+</section>
 
     <section class="contact-section" id="contact">
       <div><div class="eyebrow">CONNECT & COLLABORATE</div><h2 class="serif">교육 현장의 문제를<br>함께 탐색하고 싶습니다.</h2><p>AI 융합교육 · 특수교육공학 · 연구 협업 · 교육도구 개발</p></div>
